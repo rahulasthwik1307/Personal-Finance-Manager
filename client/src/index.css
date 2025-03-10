@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom dark mode transitions */
+body {
+  @apply transition-colors duration-200;
+}
+
+/* Chart tooltip styling */
+.recharts-tooltip-wrapper {
+  @apply transition-all duration-150 ease-out shadow-lg rounded-lg overflow-hidden;
+}
+
+.recharts-default-tooltip {
+  @apply !bg-opacity-90 backdrop-blur-sm;
+}
+
+.dark .recharts-default-tooltip {
+  @apply !bg-gray-800 !border-gray-700 !text-gray-100;
+}
+
+.recharts-tooltip-item {
+  @apply !text-sm;
+}
+
+/* Chart axis styling */
+.dark .recharts-cartesian-axis-tick text {
+  @apply fill-gray-400;
+}
+
+.dark .recharts-cartesian-grid line {
+  @apply stroke-gray-700;
+}
+
+/* Legend styling */
+.recharts-legend-item-text {
+  @apply text-sm dark:text-gray-300;
+}
+
+/* Animation transitions */
+.motion-safe {
+  view-transition-name: none;
+}
